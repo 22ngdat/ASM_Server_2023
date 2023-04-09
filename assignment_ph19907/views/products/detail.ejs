@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý người dùng</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/usermanager.css" />
+    <link rel="stylesheet" href="/css/details.css" />
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark" style="padding-left: 20pt">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/dat/index">
+                <img src="/images/logo.png" height="35" width="35" alt="TAD" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/dat/index">Trang chủ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Quản lý sản phẩm
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="/dat/list_products">Sản phẩm</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/dat/category">Thể loại</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dat/list_users">Quản lý người dùng</a>
+                    </li>
+                </ul>
+
+                <div class="btn-group">
+                    <button class="btn btn-lg btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" style="color: aliceblue">
+                        Tài khoản
+                        <img src="/images/logo_account.png" height="30px" alt="" srcset="" />
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href='/dat/login'>Đăng xuất</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="details">
+        <div class="card">
+            <div class=" bg-light" style="text-align: center; margin-top: 10px; font-weight: bold;">Chi
+                tiết
+                sản phẩm</div>
+            <div class="photo">
+                <img class="imageProduct" src="<%= product.imageProduct %>">
+            </div>
+
+            <div class="description">
+                <h5 style="color: red;">Tên sản phẩm</h5>
+                <h2>
+                    <%= product.name %>
+                </h2>
+                <h5 style="color: red;">Thể loại</h5>
+                <h4>
+                    <%= product.category.name %>
+                </h4>
+                <h5 style="color: red;">Giá tiền</h5>
+                <h1>$<%= product.price %>
+                </h1>
+                <h5 style="color: red;">Chi tiết sản phẩm</h5>
+                <h4>
+                    <%= product.desc %>
+                </h4>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

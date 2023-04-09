@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng kí</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/js/login.js" />
+</head>
+
+<body>
+    <div class="overlay">
+        <!-- LOGN IN FORM by Omar Dsoky -->
+        <form method="post" action="">
+            <!--   con = Container  for items in the form-->
+            <div class="con">
+                <!--     Start  header Content  -->
+                <header class="head-form">
+                    <h2>Đăng kí</h2>
+                    <!--     A welcome message or an explanation of the login form -->
+                    <p>Điền đầy đủ thông tin dưới đây để đăng kí </p>
+                    <%= msg %>
+                </header>
+                <br />
+                <div class="field-set">
+                    <input class="form-input" type="text" placeholder="Họ và tên" required name="fullname" />
+                    <br />
+                    <input class="form-input" type="text" placeholder="Tên đăng nhập" name="username" required />
+                    <br />
+                    <input class="form-input" type="email" placeholder="Email" name="email" required />
+                    <br />
+                    <input class="form-input" type="number" placeholder="Số điện thoại" name="phone" required />
+                    <br />
+                    <input class="form-input" type="password" placeholder="Mật khẩu" name="passwd" required />
+                    <br />
+                    <input class="form-input" type="password" placeholder="Nhập lại mật khẩu" name="passwd2" required />
+                    <br />
+
+                </div>
+                <button class="log-in" type="submit">Đăng kí</button>
+                <div class="other">
+                    <button class="btn submits frgt-pass">Quên mật khẩu</button>
+                    <a href="/dat/login">
+                        <button class="btn submits sign-up" type="button">
+                            Đăng nhập
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

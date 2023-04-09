@@ -1,0 +1,32 @@
+.title_body {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.search_user {
+  display: inline-block;
+  float: right;
+}
+#addUSer {
+  margin-left: 30px;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+}
+#btn_search_user {
+  margin-right: 20px;
+}
+.list_users {
+  background-color: white;
+  width: 100%;
+}
+.table_list_user {
+  margin: 20px;
+}
+#btn_fillter {
+  margin-left: 20px;
+}
+.form-loai{
+  display: inline-block;
+}

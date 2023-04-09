@@ -1,0 +1,78 @@
+<%- include('../inc/nav_menu')%>
+    <div class="list_users">
+        <div class="title_body">Quản lý người dùng</div>
+
+        <a href="/dat/add_users" role="button" class="btn btn-outline-secondary" id="addUSer">
+            Thêm mới
+            <img src="/images/add_user.png" alt="" srcset="" height="40px" width="40px" />
+        </a>
+        <div class="search_user">
+            <form class="d-flex" role="search" action="/dat/search_users" method="get">
+                <input class="form-control me-2" type="search" placeholder="Tên đăng nhập" name="u" aria-label="Search"
+                    style="width: 160px" />
+                <button class="btn btn-outline-success" id="btn_search_user" type="submit">
+                    Tìm kiếm
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="table_list_user bg-body-secondary">
+        <table class="table table-bordered">
+            <thead class="table-secondary">
+                <tr>
+                    <th scope="col">Họ và tên</th>
+                    <th scope="col">Tên đăng nhập</th>
+                    <th scope="col">Số điện thoại</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Vai trò</th>
+                    <th scope="col">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%listUsers.forEach((objUser)=>{ %>
+                    <tr>
+                        <td>
+                            <%= objUser.fullname %>
+                        </td>
+                        <td>
+                            <%= objUser.username %>
+                        </td>
+                        <td>
+                            <%= objUser.phone %>
+                        </td>
+                        <td>
+                            <%= objUser.email %>
+                        </td>
+                        <td>
+                            <%= objUser.role %>
+                        </td>
+                        <td style="font-size: 18px;">
+                            <a href="/dat/update-users/<%= objUser._id %>" role="button"
+                                class="btn btn-outline-primary btn-sm">
+                                Sửa
+                            </a>
+                            <a href="/dat/delete-users/<%= objUser._id %>" role="button"
+                                class="btn btn-outline-danger btn-sm "
+                                onclick="return confirm('Bạn chắc chắn muốn xoá nó?')">
+                                Xoá
+                            </a>
+                            <!-- <a href="" role="button" class="btn btn-info btn-sm ">
+                                Chi tiết
+                            </a> -->
+                        </td>
+                    </tr>
+                    <% });%>
+            </tbody>
+        </table>
+    </div>
+    <div style="margin-left: 20px;">
+        <%- include('../inc/footer')%>
+
+    </div>
+    <!-- body end -->
+    <!-- link bootstrap js -->
+    <script src="jquery/jquery-3.6.4.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    </body>
+
+    </html>

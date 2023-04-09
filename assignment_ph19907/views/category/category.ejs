@@ -1,0 +1,61 @@
+<%- include('../inc/nav_menu')%>
+    <div class="list_users">
+        <div class="title_body">Quản lý loại sản phẩm</div>
+
+        <a href="/dat/add_category" role="button" class="btn btn-outline-secondary" id="addUSer">
+            Thêm mới
+            <img src="/images/add_product.png" alt="" srcset="" height="40px" width="40px" />
+        </a>
+
+        <div class="search_user">
+            <form class="d-flex" role="search" action="/dat/search-category" method="get">
+                <input class="form-control me-2" name="c" type="search" placeholder="Loại sản phẩm" aria-label="Search"
+                    style="width: 160px" />
+                <button class="btn btn-outline-success" id="btn_search_user" type="submit">
+                    Tìm kiếm
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="table_list_user bg-body-secondary">
+        <table class="table table-bordered">
+            <thead class="table-secondary">
+                <tr>
+                    <th scope="col">Loại sản phẩm</th>
+                    <th scope="col">Mô tả</th>
+                    <th scope="col">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%listCategory.forEach((objCategory)=>{ %>
+
+                    <tr>
+                        <td>
+                            <%= objCategory.name %>
+                        </td>
+                        <td>
+                            <%= objCategory.des %>
+                        </td>
+                        <td style="font-size: 18px;">
+                            <a href="/dat/update-category/<%= objCategory._id %>" role="button"
+                                class="btn btn-outline-primary btn-sm">
+                                Sửa
+                            </a>
+                            <a href="/dat/delete-category/<%= objCategory._id %>" role="button"
+                                class="btn btn-outline-danger btn-sm "
+                                onclick="return confirm('Bạn chắc chắn muốn xoá nó?')">
+                                Xoá
+                            </a>
+                            <!-- <a href="" role="button" class="btn btn-info btn-sm ">
+                                Chi tiết
+                            </a> -->
+                        </td>
+                    </tr>
+                    <% });%>
+
+            </tbody>
+        </table>
+    </div>
+    </body>
+
+    </html>

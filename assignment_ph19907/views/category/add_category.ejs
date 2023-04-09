@@ -1,0 +1,25 @@
+<%- include('../inc/nav_menu')%>
+    <div class="title_body">Thêm loại sản phẩm</div>
+    <% if(msg.length> 0){%>
+        <p class="alert alert-info">
+            <%= msg %>
+        </p>
+        <%}%>
+            <form method="post" class="container-fluid bg-body-secondary" action="">
+                <!-- Tên sản phẩm -->
+                <div class="form-group">
+                    <label for="name" class="col-form-label-lg">Loại sản phẩm</label>
+                    <input class="form-control" type="text" name="name" placeholder="Tên loại sản phẩm" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="name" class="col-form-label-lg">Mô tả</label>
+                    <input class="form-control" type="text" name="des" placeholder="Mô tả" required />
+                </div>
+                <button class="btn btn-outline-success" type="submit" style="margin-top: 20px">
+                    Xác nhận
+                </button>
+            </form>
+            </body>
+
+            </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/js/login.js" />
+</head>
+
+<body>
+    <div class="overlay">
+        <form method="post" action="">
+            <div class="con">
+                <header class="head-form">
+                    <h2>Đăng nhập</h2>
+                    <p>login here using your username and password</p>
+                    <%=msg %>
+                </header>
+                <br />
+                <div class="field-set">
+                    <input class="form-input" type="text" placeholder="Tên đăng nhâp" name="username" required />
+                    <br />
+                    <input class="form-input" type="password" placeholder="Mật khẩu" name="pwd" required />
+                    <br />
+                </div>
+                <button class="log-in" type="submit">Đăng nhập</button>
+                <a href="/dat/reg">
+                    <button style="margin-top: 0px;" type="button">Đăng kí</button>
+                </a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

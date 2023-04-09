@@ -1,0 +1,90 @@
+<%- include('../inc/nav_menu')%>
+    <!-- body -->
+    <div class="title_body">Quản lý sản phẩm</div>
+
+    <a href="/dat/add_product" role="button" class="btn btn-outline-secondary" id="addUSer">
+        Thêm mới
+        <img src="/images/add_product.png" alt="" srcset="" height="40px" width="40px" />
+    </a>
+
+    <div class="search_user">
+        <form class="d-flex" action="/dat/search" method="get">
+            <input class="form-control me-2" type="search" name="s" placeholder="Tên sản phẩm" aria-label="Search"
+                style="width: 160px" />
+            <button class="btn btn-outline-success" id="btn_search_user" type="submit">
+                Tìm kiếm
+            </button>
+        </form>
+    </div>
+    <form method="GET" action="/dat/filter" style="display: inline-flex;">
+        <select required name="category" style="height: 40px;" class="form-select">
+            <%listCategory.forEach(row=> {%>
+                <option value="<%= row.id %>">
+                    <%= row.name %>
+                </option>
+                <%})%>
+        </select>
+        <button type="submit" class="btn btn-outline-primary">Lọc</button>
+    </form>
+
+    <div class="table_list_user bg-body-secondary">
+        <table class="table table-bordered">
+            <thead class="table-secondary">
+                <tr>
+                    <!-- <th scope="col">ID</th> -->
+                    <th scope="col">Tên sản phẩm</th>
+                    <th scope="col">Giá tiền</th>
+                    <th scope="col">Thể loại</th>
+                    <th scope="col">Hình ảnh</th>
+                    <th scope="col">Thao tác</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+                <%listProducts.forEach((objSP)=>{ %>
+                    <tr>
+                        <td style="font-size: 18px;">
+                            <a href="/dat/detail/<%= objSP._id %>" style="text-decoration: none;">
+                                <%= objSP.name %>
+                            </a>
+
+                        </td>
+                        <td style="font-size: 18px;">
+
+                            <%= objSP.price %> VNĐ
+                        </td>
+                        <td style="font-size: 18px;">
+                            <%= objSP.category.name%>
+                        </td>
+
+                        <td>
+                            <img src="<%= objSP.imageProduct %>" alt="image" height="100" width="100">
+                        </td>
+
+                        <td style="font-size: 18px;">
+                            <a href="/dat/update_product/<%= objSP._id %>" role="button"
+                                class="btn btn-outline-primary btn-sm">
+                                Sửa
+                            </a>
+                            <a href="/dat/delete/<%= objSP._id %>" role="button" class="btn btn-outline-danger btn-sm "
+                                onclick="return confirm('Bạn chắc chắn muốn xoá nó?')">
+                                Xoá
+                            </a>
+                            <!-- <a href="" role="button" class="btn btn-info btn-sm ">
+                                Chi tiết
+                            </a> -->
+                        </td>
+                    </tr>
+                    <% });%>
+            </tbody>
+
+
+        </table>
+    </div>
+    <div style="margin-left: 20px;">
+        <%- include('../inc/footer')%>
+    </div>
+    </body>
+
+    </html>
